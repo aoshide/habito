@@ -204,7 +204,7 @@ function AreaCard({ singleArea }: { singleArea: AreaType }) {
       {/* Icons and texts */}
       <div className="flex  items-center gap-4">
         <FontAwesomeIcon
-          className="w-5 h-5 text-customRed"
+          className="w-5 h-5 text-primary"
           height={20}
           width={20}
           icon={singleArea.icon}

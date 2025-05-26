@@ -275,12 +275,14 @@ function TimerPicker({
       </div>
       {/* -------------------------------------------- */}
       {/* Save Button */}
-      <button
-        onClick={saveTime}
-        className="bg-customRed p-3 text-white w-full rounded-md mt-10 mb-1"
-      >
-        Save
-      </button>
+<button
+  onClick={saveTime}
+  style={{ backgroundColor: "#651FFF" }} // твой hex-цвет
+  className="p-3 text-white w-full rounded-md mt-10 mb-1"
+>
+  Save
+</button>
+
     </div>
   );
 }

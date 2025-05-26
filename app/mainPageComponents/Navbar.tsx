@@ -8,7 +8,7 @@ import LogoAnName from "../Components/LogoAnName";
 
 function Navbar() {
   const { userId } = useAuth();
-  const defaultColor = "#d90429";
+  const defaultColor = "#651FFF";
   const backgroundColorObject = { backgroundColor: defaultColor };
   return (
     <header>
@@ -49,7 +49,7 @@ function Navbar() {
                 <Link href={"/sign-up"}>
                   <button
                     className={`block sm:w-32 w-full border rounded-lg  px-9 py-3 text-sm font-medium   transition   
-              focus:outline-none hover:bg-customRed hover:text-white  border-customRed text-customRed `}
+              focus:outline-none hover:bg-primary hover:text-white  border-primary text-primary `}
                     type="button"
                   >
                     Sign Up

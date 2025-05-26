@@ -1,20 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@media (prefers-color-scheme: dark) {
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
 }
+
 
 .poppins {
   font-family: var(--font-poppins);
@@ -30,16 +24,16 @@
   fill: #ebedf0;
 }
 .react-calendar-heatmap .color-github-1 {
-  fill: #d90429;
+  fill: #660273;
 }
 .react-calendar-heatmap .color-github-2 {
-  fill: #d90429;
+  fill: #660273;
 }
 .react-calendar-heatmap .color-github-3 {
-  fill: #d90429;
+  fill: #660273;
 }
 .react-calendar-heatmap .color-github-4 {
-  fill: #d90429;
+  fill: #660273;
 }
 
 /* styles/globals.css */

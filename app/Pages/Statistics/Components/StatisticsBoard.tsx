@@ -144,7 +144,7 @@ export default function StatisticsBoard() {
           key={singleIndex}
           className="  flex flex-col gap-1 items-start p-5 rounded-md"
         >
-          <FontAwesomeIcon className="text-customRed" icon={singleCard.icon} />
+          <FontAwesomeIcon className="text-primary" icon={singleCard.icon} />
           <span className="font-bold text-xl mt-3">{singleCard.counter}</span>
           <span className="font-light text-sm">{singleCard.text}</span>
         </div>

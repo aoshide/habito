@@ -13,7 +13,7 @@ function AllHabitsTopBar() {
   const userButtonAppearance = {
     elements: {
       userButtonAvatarBox: "w-10 h-10", // Custom width and height
-      userButtonPopoverActionButton: "text-red-600", // Custom text color for action buttons
+      userButtonPopoverActionButton: "text-blue-400", // Custom text color for action buttons
     },
   };
 

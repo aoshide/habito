@@ -310,7 +310,7 @@ function InputNameAndIconButton({
 
         <FontAwesomeIcon
           onClick={() => setOpenIconWindow(true)}
-          className="bg-mainColor mt-[1px] p-4 rounded-md text-white cursor-pointer bg-customRed "
+          className="bg-mainColor mt-[1px] p-4 rounded-md text-white cursor-pointer bg-primary "
           icon={iconSelected}
           height={16}
           width={20}
@@ -693,7 +693,7 @@ function Reminder({
     return (
       <div
         className={`${
-          isOn ? "bg-customRed" : "bg-slate-400"
+          isOn ? "bg-primary" : "bg-slate-400"
         } w-16 h-[30px] relative rounded-lg flex`}
       >
         <div onClick={updateToggle} className="w-1/2 h-full  "></div>
@@ -745,12 +745,14 @@ function SaveButton({ habit }: { habit: HabitType }) {
 
   return (
     <div className="w-full flex justify-center mt-9">
-      <button
-        onClick={checkHabitObject}
-        className="bg-customRed p-4 w-[98%] rounded-md text-white"
-      >
-        {buttonText}
-      </button>
+<button
+  onClick={checkHabitObject}
+  style={{ backgroundColor: "#651FFF" }} // заменишь здесь на свой цвет
+  className="p-4 w-[98%] rounded-md text-white"
+>
+  {buttonText}
+</button>
+
     </div>
   );
 }

@@ -52,7 +52,7 @@ function IconsWindow({
           <FontAwesomeIcon
             key={iconIndex}
             className={`border p-2   border-gray-300 rounded-md text-xl cursor-pointer
-              hover:text-customRed hover:border-customRed
+              hover:text-primary hover:border-primary
                 `}
             height={50}
             width={50}

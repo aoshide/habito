@@ -43,7 +43,7 @@ export default function StatisticsHabitCard({ habit }: { habit: HabitType }) {
       <div className="flex justify-between items-center">
         <div className="flex gap-3 items-center">
           {/* Icon */}
-          <div className="bg-customRed w-10 h-10 rounded-full p-3 flex items-center justify-center text-white">
+          <div className="bg-primary w-10 h-10 rounded-full p-3 flex items-center justify-center text-white">
             <FontAwesomeIcon icon={faBook} />
           </div>
           {/* Habit Name */}

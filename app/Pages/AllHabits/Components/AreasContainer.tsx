@@ -90,7 +90,7 @@ export default function AreasContainer() {
     return (
       <div
         className={`  p-2 px-3  rounded-md flex gap-2   items-center cursor-pointer select-none ${
-          isSelected ? "bg-customRed text-white" : "text-gray-400"
+          isSelected ? "bg-primary text-white" : "text-gray-400"
         } `}
       >
         <FontAwesomeIcon icon={singleArea.icon} />

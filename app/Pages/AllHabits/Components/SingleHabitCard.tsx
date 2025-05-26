@@ -145,7 +145,7 @@ export function HabitCard({ singleHabit }: { singleHabit: HabitType }) {
           <div className="flex gap-2 justify-between   ">
             <div className="flex gap-2 items-center">
               <FontAwesomeIcon
-                className="  p-3 rounded-full w-4 h-4 bg-customRed text-white"
+                className="  p-3 rounded-full w-4 h-4 bg-primary text-white"
                 height={20}
                 width={20}
                 icon={singleHabit.icon}
