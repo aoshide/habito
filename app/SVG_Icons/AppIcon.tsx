@@ -3,11 +3,11 @@ import React from "react";
 const AppIcon = ({ color = "#000000", width = "64px", height = "64px" }) => (
   <svg
     viewBox="0 0 64 64"
-    xmlns="http://www.w3.org/2000/svg"
+    xmlns="https://www.flaticon.com/ru/free-icon/letter-h_11789470?term=%D0%B1%D1%83%D0%BA%D0%B2%D0%B0+h&page=1&position=8&origin=tag&related_id=11789470"
     fill={color}
     width={width}
     height={height}
-  >
+  >т
     <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
     <g
       id="SVGRepo_tracerCarrier"
