@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import AppIcon from "../SVG_Icons/AppIcon";
+import Image from "next/image";
 import Link from "next/link";
 import { useAuth } from "@clerk/nextjs";
 import LogoAnName from "../Components/LogoAnName";
@@ -10,54 +10,45 @@ function Navbar() {
   const { userId } = useAuth();
   const defaultColor = "#651FFF";
   const backgroundColorObject = { backgroundColor: defaultColor };
-  return (
-    <header>
-      <div className=" p-8 px-20  ">
-        <div className="sm:flex sm:items-center sm:justify-between ">
-          <div className="text-center  sm:text-left mb-7 sm:mb-0">
-            {/* Icon + Name of The App */}
-            {/* ----------------------- */}
-            <LogoAnName />
-          </div>
-          {/*  */}
-          {/* The buttons */}
 
-          <div>
-            {userId ? (
-              <Link href={"/dashboard"}>
+  return (
+    <header className="overlay nav container">
+      <div className="flex items-center justify-between w-full">
+        <div className="text-center sm:text-left">
+          <LogoAnName />
+        </div>
+        <div>
+          {userId ? (
+            <Link href={"/dashboard"}>
+              <button
+                style={backgroundColorObject}
+                className="btn btn-primary hover-scale"
+                type="button"
+              >
+                Dashboard
+              </button>
+            </Link>
+          ) : (
+            <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
+              <Link href={"/sign-in"}>
                 <button
                   style={backgroundColorObject}
-                  className={`block    rounded-lg  px-9 py-3 text-sm font-medium text-white transition   
-               `}
+                  className="btn btn-primary hover-scale"
                   type="button"
                 >
-                  Dashboard
+                  Sign In
                 </button>
               </Link>
-            ) : (
-              <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
-                <Link href={"/sign-in"}>
-                  <button
-                    style={backgroundColorObject}
-                    className={`block sm:w-32 w-full rounded-lg  px-9 py-3 text-sm font-medium text-white transition   focus:outline-none  `}
-                    type="button"
-                  >
-                    Sign In
-                  </button>
-                </Link>
-
-                <Link href={"/sign-up"}>
-                  <button
-                    className={`block sm:w-32 w-full border rounded-lg  px-9 py-3 text-sm font-medium   transition   
-              focus:outline-none hover:bg-primary hover:text-white  border-primary text-primary `}
-                    type="button"
-                  >
-                    Sign Up
-                  </button>
-                </Link>
-              </div>
-            )}
-          </div>
+              <Link href={"/sign-up"}>
+                <button
+                  className="btn btn-secondary hover-scale"
+                  type="button"
+                >
+                  Sign Up
+                </button>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </header>

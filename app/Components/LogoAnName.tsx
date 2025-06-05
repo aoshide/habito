@@ -1,5 +1,5 @@
 import React from "react";
-import AppIcon from "../SVG_Icons/AppIcon";
+import Image from "next/image";
 import { defaultColor } from "@/colors";
 
 function LogoAnName() {
@@ -9,9 +9,15 @@ function LogoAnName() {
         {/* The Icon */}
         <div
           style={{ backgroundColor: defaultColor.default }}
-          className=" p-2 rounded-md"
+          className="p-2 rounded-md"
         >
-          <AppIcon color="#ffffff" height="34" width="34" />
+          <Image
+            src="/favicon.ico"
+            alt="App Icon"
+            width={34}
+            height={34}
+            priority
+          />
         </div>
         {/* The Name of the app */}
         <span

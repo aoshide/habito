@@ -7,7 +7,7 @@ const AppIcon = ({ color = "#000000", width = "64px", height = "64px" }) => (
     fill={color}
     width={width}
     height={height}
-  >т
+  >
     <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
     <g
       id="SVGRepo_tracerCarrier"

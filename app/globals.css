@@ -1,64 +1,213 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@media (prefers-color-scheme: dark) {
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+/* Базовые стили для контейнера страницы */
+.page-container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0e7f5 0%, #ffffff 100%);
 }
+
+/* Слой для наложения контента над блобами */
+.overlay {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Анимация первого блоба */
+@keyframes blob1 {
+  0% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(30px, -30px) scale(1.1); }
+  40% { transform: translate(20px, 20px) scale(1.05); }
+  60% { transform: translate(-20px, -10px) scale(1.15); }
+  80% { transform: translate(-10px, 10px) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Анимация второго блоба */
+@keyframes blob2 {
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-40px, 40px) scale(1.2); }
+  50% { transform: translate(40px, -40px) scale(1.25); }
+  75% { transform: translate(-20px, 20px) scale(1.15); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Анимация третьего блоба */
+@keyframes blob3 {
+  0% { transform: translate(0, 0) scale(1); }
+  30% { transform: translate(15px, -15px) scale(1.05); }
+  60% { transform: translate(-15px, 15px) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Анимация четвертого блоба (дополнительный) */
+@keyframes blob4 {
+  0% { transform: translate(0, 0) scale(1); }
+  40% { transform: translate(50px, -50px) scale(1.3); }
+  70% { transform: translate(-30px, 30px) scale(1.2); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Анимация для сверкающих линий */
+@keyframes sparkle {
+  0%, 14.28%, 100% { opacity: 0; transform: scaleX(0); } /* Линия невидима */
+  7.14% { opacity: 0.7; transform: scaleX(1); } /* Линия появляется на 1 секунду (с 0 до 7 секунд = 14.28% цикла) */
+}
+
+/* Базовый стиль для блобов */
+.blob-background {
+  position: absolute;
+  background: rgba(122, 6, 246, 0.828); /* Полупрозрачный фиолетовый */
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.sparkle-line {
+  position: absolute;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)); /* белый градиент */
+  height: 6px; 
+  z-index: 5;
+  transform-origin: center;
+  animation: sparkle 7s infinite ease-in-out;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8); 
+  border-radius: 4px;
+}
+
+.animate-blob1 {
+  animation: blob1 20s infinite ease-in-out;
+}
+.animate-blob2 {
+  animation: blob2 25s infinite ease-in-out;
+}
+.animate-blob3 {
+  animation: blob3 18s infinite ease-in-out;
+}
+.animate-blob4 {
+  animation: blob4 22s infinite ease-in-out;
 }
 
 
-.poppins {
-  font-family: var(--font-poppins);
+.stagger-1 { animation-delay: 0s; }
+.stagger-2 { animation-delay: 2s; }
+.stagger-3 { animation-delay: 4s; }
+.stagger-4 { animation-delay: 6s; }
+
+/* Стили для кнопок */
+.btn {
+  @apply px-6 py-3 rounded-lg text-white font-medium transition duration-300;
+}
+.btn-primary {
+  @apply bg-purple-900 hover:bg-purple-950 focus:outline-none;
+}
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Стили для текста */
+.text-hero {
+  @apply text-4xl font-bold text-gray-900 mb-4;
+}
+.text-subhero {
+  @apply text-lg text-gray-600 max-w-md mx-auto mb-6;
+}
+
+/* Адаптивные стили для контейнеров */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Стили для навигации */
+.nav {
+  @apply flex items-center justify-between py-4;
+}
+.nav-item {
+  @apply text-gray-700 hover:text-purple-600 transition duration-200;
+}
+
+/* Дополнительные декоративные стили */
+.shadow-custom {
+  @apply shadow-lg shadow-purple-100;
+}
+.border-custom {
+  @apply border border-purple-200;
+}
+
+/* Стили для изображений */
+.image-container {
+  @apply relative overflow-hidden rounded-lg;
+}
+.image {
+  @apply w-full h-auto object-cover transition-opacity duration-300 opacity-100 hover:opacity-90;
+}
+
+/* Анимации для ховера */
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+/* Стили для футера (если понадобится) */
+.footer {
+  @apply bg-gray-100 py-6 mt-10;
+}
+.footer-link {
+  @apply text-gray-500 hover:text-purple-600 transition duration-200;
+}
+
+/* Стили для форм */
+.form-group {
+  @apply mb-4;
+}
+.form-input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500;
+}
+.form-label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+/* Дополнительные утилиты */
+.full-height {
+  @apply h-screen;
+}
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 640px) {
+  .text-hero {
+    @apply text-3xl;
+  }
+  .text-subhero {
+    @apply text-base;
+  }
+  .nav {
+    @apply flex-col gap-4;
+  }
+  .btn {
+    @apply w-full;
   }
 }
 
-.react-calendar-heatmap .color-empty {
-  fill: #ebedf0;
-}
-.react-calendar-heatmap .color-github-1 {
-  fill: #660273;
-}
-.react-calendar-heatmap .color-github-2 {
-  fill: #660273;
-}
-.react-calendar-heatmap .color-github-3 {
-  fill: #660273;
-}
-.react-calendar-heatmap .color-github-4 {
-  fill: #660273;
+@media (max-width: 1024px) {
+  .container {
+    @apply max-w-5xl;
+  }
+  .blob-background {
+    transform: scale(0.8);
+  }
 }
 
-/* styles/globals.css */
-
-.react-calendar-heatmap rect {
-  stroke: none; /* Remove stroke if not needed */
+/* Финальные стили для блобов с вариациями */
+.blob-background-lg {
+  @apply w-[400px] h-[400px];
 }
-
-.react-calendar-heatmap rect {
-  fill: #6b46c1; /* Customize the fill color */
+.blob-background-md {
+  @apply w-[300px] h-[300px];
 }
-
-.react-calendar-heatmap .color-empty {
-  fill: #f3f4f6; /* Customize empty (no data) square color */
-}
-
-.react-calendar-heatmap .color-scale-1 {
-  fill: #d6e685;
-}
-.react-calendar-heatmap .color-scale-2 {
-  fill: #0f0004;
-}
-.react-calendar-heatmap .color-scale-3 {
-  fill: #44a340;
-}
-.react-calendar-heatmap .color-scale-4 {
-  fill: #c20c1c;
+.blob-background-sm {
+  @apply w-[200px] h-[200px];
 }
