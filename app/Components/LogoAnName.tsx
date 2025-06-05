@@ -18,7 +18,7 @@ function LogoAnName() {
           style={{ color: defaultColor.default }}
           className="font-bold text-mainColor"
         >
-          Habit
+          Adat
         </span>
         <span className="font-light"> Tracker</span>
       </span>
