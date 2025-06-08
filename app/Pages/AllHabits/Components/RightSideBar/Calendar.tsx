@@ -14,22 +14,15 @@ function Calendar() {
     selectedCurrentDayObject;
   const { setOffsetDay } = offsetDayObject;
 
-  // Convert selectedCurrentDate to Dayjs object
   const value: Dayjs | null = selectedCurrentDate
     ? dayjs(selectedCurrentDate)
     : null;
 
   function handleOnChangeDate(newDate: Dayjs) {
-    //Convert from the Day.js object to Javascript Date Object
     const jsDate = newDate.toDate();
     const currentDate = new Date();
-
-    // Calculate the difference in milliseconds
     const differenceInMs = jsDate.getTime() - currentDate.getTime();
-
-    // Calculate the difference in days
     const differenceInDays = differenceInMs / (1000 * 3600 * 24);
-
     setOffsetDay(Math.floor(differenceInDays + 1));
   }
 
@@ -39,21 +32,28 @@ function Calendar() {
         backgroundColor: isDarkMode
           ? darkModeColor.backgroundSlate
           : defaultColor.backgroundSlate,
+        maxWidth: "100%", // адаптивность
+        overflow: "hidden", // не даем вылезать
+        boxSizing: "border-box",
+        padding: "20px",
+        borderRadius: "12px",
+        margin: "20px auto",
       }}
-      className="flex mx-4 flex-col gap-6 justify-center items-center mt-10  
-          rounded-xl p-5 pt-7"
+      className="flex flex-col gap-6 justify-center items-center"
     >
       <DateCalendar
         onChange={handleOnChangeDate}
         value={value}
         sx={{
+          width: "100%",        // 100% по доступной ширине
+          maxWidth: "320px",    // максимальная ширина календаря
           "& .MuiPickersDay-root": {
             color: isDarkMode
               ? darkModeColor.textColor
-              : defaultColor.textColor, // Default text color for the days
+              : defaultColor.textColor,
             "&.Mui-selected": {
               backgroundColor: defaultColor.default,
-              color: "white", // Text color for the selected day
+              color: "white",
             },
           },
           "& .MuiPickersYear-yearButton": {
@@ -62,7 +62,7 @@ function Calendar() {
               : defaultColor.textColor,
             "&.Mui-selected": {
               backgroundColor: defaultColor.default,
-              color: "white", // Text color for the selected year
+              color: "white",
             },
           },
         }}
